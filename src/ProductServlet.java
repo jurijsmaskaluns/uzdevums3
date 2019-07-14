@@ -9,8 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@javax.servlet.annotation.WebServlet(name = "MyServlet", urlPatterns = "/products")
-public class MyServlet extends javax.servlet.http.HttpServlet {
+@javax.servlet.annotation.WebServlet(name = "ProductServlet", urlPatterns = "/products")
+public class ProductServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
     }
