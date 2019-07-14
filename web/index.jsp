@@ -15,6 +15,7 @@
   <table border="1">
 
   <p> main page</p>
+    <a href="/products">Start</a>
 
   </table>
   </body>

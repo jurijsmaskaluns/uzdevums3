@@ -15,6 +15,7 @@
 
 <table border="1">
 
+        <tr><td>ID</td><td>Product Name</td></tr>
     <c:forEach items="${requestScope.products}" var="product">
         <tr>
             <td>${product.id}</td>
@@ -24,8 +25,12 @@
             </td>
         </tr>
     </c:forEach>
+</table>
 
+<table border="1">
+    <tr>Add Product</tr>
     <form action="/add" method="post">
+
         <tr>
             <td colspan="2">
                 <input name="name" type="text">
