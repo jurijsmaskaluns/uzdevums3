@@ -1141,9 +1141,9 @@
     </column>
     <column id="285" parent="280" name="status">
       <Position>5</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+      <DefaultExpression>&apos;NEW&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="286" parent="280" name="PRIMARY">

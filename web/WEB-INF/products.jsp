@@ -36,6 +36,9 @@
             <td>
                 <a href="confirm?id=${product.id}">confirm</a>
             </td>
+            <td>
+                <a href="reject?id=${product.id}">reject</a>
+            </td>
         </tr>
     </c:forEach>
 </table>
@@ -47,11 +50,18 @@
 
             <tr>
                 <td>Product Name</td>
-                <td colspan="2">
-                    <input name="name" type="text">
+                <td>
+                    <select name="name">
+                        <option disabled>Select Product</option>
+                        <option value="Motherboard">Motherboard</option>
+                        <option value="CPU">CPU</option>
+                        <option value="GPU">GPU</option>
+                        <option value="RAM">RAM</option>
+                        <option value="Mouse">Mouse</option>
+                    </select>
                 </td>
                 <td>Product Type</td>
-                <td colspan="2">
+                <td>
                     <input name="type" type="text">
                 </td>
                 <td>

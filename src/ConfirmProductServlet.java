@@ -13,10 +13,8 @@ public class ConfirmProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-
         try {
             DAO.confirmProduct(id);
         } catch (SQLException | ClassNotFoundException e) {

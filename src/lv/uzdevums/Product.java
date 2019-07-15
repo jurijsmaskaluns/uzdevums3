@@ -7,10 +7,10 @@ public class Product {
     private String name;
     private Date created;
     private String productType;
-    private int status;
+    private String status;
 
 
-    public Product(int id, String name, Date created, String productType, int status) {
+    public Product(int id, String name, Date created, String productType, String status) {
         this.id = id;
         this.name = name;
         this.created = created;
@@ -52,11 +52,11 @@ public class Product {
         this.created = created;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 }

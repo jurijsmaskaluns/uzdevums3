@@ -22,7 +22,7 @@ public class DAO {
                 String name = resultSet.getString(2);
                 Date created = resultSet.getDate(3);
                 String productType = resultSet.getString(4);
-                int status = resultSet.getInt(5);
+                String status = resultSet.getString(5);
                 products.add(new Product(id, name, created, productType, status));
             }
             return products;
@@ -50,7 +50,16 @@ public class DAO {
 
     public static void confirmProduct(int id) throws SQLException, ClassNotFoundException {
         try (Connection c = getConnection();
-             PreparedStatement ps = c.prepareStatement("UPDATE product SET status = 0 WHERE id=?");) {
+             PreparedStatement ps = c.prepareStatement("UPDATE product SET status = 'CONFIRMED' WHERE id=?");) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
+
+
+        }
+    }
+    public static void rejectProduct(int id) throws SQLException, ClassNotFoundException {
+        try (Connection c = getConnection();
+             PreparedStatement ps = c.prepareStatement("UPDATE product SET status = 'REJECTED' WHERE id=?");) {
             ps.setInt(1, id);
             ps.executeUpdate();
 

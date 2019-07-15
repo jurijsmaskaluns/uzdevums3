@@ -13,9 +13,7 @@ public class ProductServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         try {
             request.setAttribute("products", DAO.getProducts());
         } catch (SQLException e) {
@@ -24,6 +22,5 @@ public class ProductServlet extends javax.servlet.http.HttpServlet {
             e.printStackTrace();
         }
         request.getRequestDispatcher("WEB-INF/products.jsp").forward(request, response);
-
     }
 }

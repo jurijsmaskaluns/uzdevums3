@@ -8,15 +8,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "DeleteProductServlet", urlPatterns = "/delete")
-public class DeleteProductServlet extends HttpServlet {
+@WebServlet(name = "RejectProductServlet", urlPatterns = "/reject")
+public class RejectProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         try {
-            DAO.deleteProduct(id);
+            DAO.rejectProduct(id);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
