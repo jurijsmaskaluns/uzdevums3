@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "DeleteProductServlet", urlPatterns = "/delete")
+@WebServlet(name = "DeleteProductServlet", urlPatterns = "/delete")// "Servlet" pieslēgšana saitei
 public class DeleteProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
@@ -21,5 +21,6 @@ public class DeleteProductServlet extends HttpServlet {
             e.printStackTrace();
         }
         response.sendRedirect("/products");
-    }
-}
+    }// Pēc šis saites: <a href="delete?id=${product.id}">delete</a> tiek nodotas ID vērtības, kura tālāk tiek nodota "deleteProduct" metodei, kura atrodas DAO klasē
+}   // Citiem vārdiet tiek veikta datu apstrāde, datu dzēšanai pēc produkta ID
+

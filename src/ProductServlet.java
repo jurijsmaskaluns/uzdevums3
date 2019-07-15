@@ -21,6 +21,6 @@ public class ProductServlet extends javax.servlet.http.HttpServlet {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        request.getRequestDispatcher("WEB-INF/products.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/products.jsp").forward(request, response); //novirza datus izpildei JSP failā
     }
-}
+}// ja nospiest uz url/products, tad vēršamies DAO klasē, kur izpildīsies getProducts metode, kura atgriezis produktu sarakstu no datu bāzes

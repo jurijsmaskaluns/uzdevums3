@@ -12,10 +12,8 @@
     <title>Products list</title>
 </head>
 <body>
-
 <p>Products List</p>
 <table border="1">
-
     <tr>
         <td>ID</td>
         <td>Product Name</td>
@@ -23,7 +21,7 @@
         <td>Day</td>
         <td>Product Status</td>
     </tr>
-    <c:forEach items="${requestScope.products}" var="product">
+    <c:forEach items="${requestScope.products}" var="product"> <%-- cikls forEach, kurš aizpilda tabulu ar datiem. --%>
         <tr>
             <td>${product.id}</td>
             <td><c:out value="${product.name}"/></td>
@@ -42,38 +40,30 @@
         </tr>
     </c:forEach>
 </table>
-
 <table border="1">
     <tr><p>Add Product</p></tr>
     <form action="/add" method="post">
-
-
-            <tr>
-                <td>Product Name</td>
-                <td>
-                    <select name="name">
-                        <option disabled>Select Product</option>
-                        <option value="Motherboard">Motherboard</option>
-                        <option value="CPU">CPU</option>
-                        <option value="GPU">GPU</option>
-                        <option value="RAM">RAM</option>
-                        <option value="Mouse">Mouse</option>
-                    </select>
-                </td>
-                <td>Product Type</td>
-                <td>
-                    <input name="type" type="text">
-                </td>
-                <td>
-                    <input type="submit">
-                </td>
-
-            </tr>
-
-
+        <tr>
+            <td>Product Name</td>
+            <td>
+                <select name="name">
+                    <option disabled>Select Product</option>
+                    <option value="Motherboard">Motherboard</option>
+                    <option value="CPU">CPU</option>
+                    <option value="GPU">GPU</option>
+                    <option value="RAM">RAM</option>
+                    <option value="Mouse">Mouse</option>
+                </select>
+            </td>
+            <td>Product Type</td>
+            <td>
+                <input name="type" type="text">
+            </td>
+            <td>
+                <input type="submit">
+            </td>
+        </tr>
     </form>
-
 </table>
-
 </body>
 </html>

@@ -21,7 +21,5 @@ public class ConfirmProductServlet extends HttpServlet {
             e.printStackTrace();
         }
         response.sendRedirect("/products");
-
-
     }
-}
+}// funkcija tada paša, kā "RejectProductServlet", vienīgi statusa maiņa uz "Confirmed" pēc produkta ID

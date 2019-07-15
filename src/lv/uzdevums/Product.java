@@ -2,7 +2,7 @@ package lv.uzdevums;
 
 import java.sql.Date;
 
-public class Product {
+public class Product { //Objekta "Product" apraksts
     private int id;
     private String name;
     private Date created;
@@ -10,7 +10,7 @@ public class Product {
     private String status;
 
 
-    public Product(int id, String name, Date created, String productType, String status) {
+    public Product(int id, String name, Date created, String productType, String status) { // Konstruktors datu izvadei
         this.id = id;
         this.name = name;
         this.created = created;
@@ -20,7 +20,7 @@ public class Product {
 
     }
 
-    public int getId() {
+    public int getId() {   // "get" un "set" generēšana, lai būtu iespējamība saņēmt un ierakstīt datus, tālākām darbībām
         return id;
     }
 

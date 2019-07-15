@@ -11,11 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<table border="1">
-
-    <p> main page</p>
+    <p> Testa uzdevums </p>
     <a href="/products">Start</a>
-
-</table>
 </body>
 </html>
