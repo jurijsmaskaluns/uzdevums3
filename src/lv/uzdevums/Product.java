@@ -16,6 +16,8 @@ public class Product {
         this.created = created;
         this.productType = productType;
         this.status = status;
+
+
     }
 
     public int getId() {
@@ -56,16 +58,5 @@ public class Product {
 
     public void setStatus(int status) {
         this.status = status;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", created='" + created + '\'' +
-                ", productType='" + productType + '\'' +
-                ", status=" + status +
-                '}';
     }
 }

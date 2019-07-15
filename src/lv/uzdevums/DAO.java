@@ -9,12 +9,9 @@ public class DAO {
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
         return DriverManager.getConnection("jdbc:mysql://localhost:3306/tehnika", "root", "12345");
-
     }
 
-
     public static List<Product> getProducts() throws SQLException, ClassNotFoundException {
-
         try (Connection c = getConnection();
              PreparedStatement ps = c.prepareStatement("SELECT * from product");
              ResultSet resultSet = ps.executeQuery();) {
@@ -32,14 +29,12 @@ public class DAO {
         }
     }
 
-
     public static void addProduct(String name, String productType) throws SQLException, ClassNotFoundException {
         try (Connection c = getConnection();
-                PreparedStatement ps = c.prepareStatement("INSERT INTO product(name, productType) values(?,?)");
-                )
-        {
-            ps.setString(1,name);
-            ps.setString(2,productType);
+             PreparedStatement ps = c.prepareStatement("INSERT INTO product(name, productType) values(?,?)");
+        ) {
+            ps.setString(1, name);
+            ps.setString(2, productType);
             ps.executeUpdate();
         }
     }
@@ -51,6 +46,16 @@ public class DAO {
             ps.executeUpdate();
 
         }
+    }
 
+    public static void confirmProduct(int id) throws SQLException, ClassNotFoundException {
+        try (Connection c = getConnection();
+             PreparedStatement ps = c.prepareStatement("UPDATE product SET status = 0 WHERE id=?");) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
+
+
+        }
     }
 }
+

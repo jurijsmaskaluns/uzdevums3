@@ -23,7 +23,7 @@ public class ProductServlet extends javax.servlet.http.HttpServlet {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        request.getRequestDispatcher("WEB-INF/products.jsp").forward(request,response);
-        ;
+        request.getRequestDispatcher("WEB-INF/products.jsp").forward(request, response);
+
     }
 }

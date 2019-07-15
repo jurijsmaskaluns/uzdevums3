@@ -13,6 +13,7 @@
 </head>
 <body>
 
+<p>Products List</p>
 <table border="1">
 
     <tr>
@@ -32,12 +33,15 @@
             <td>
                 <a href="delete?id=${product.id}">delete</a>
             </td>
+            <td>
+                <a href="confirm?id=${product.id}">confirm</a>
+            </td>
         </tr>
     </c:forEach>
 </table>
 
 <table border="1">
-    <tr>Add Product</tr>
+    <tr><p>Add Product</p></tr>
     <form action="/add" method="post">
 
 

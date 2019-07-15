@@ -1,4 +1,3 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: JMJ
@@ -8,15 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>Title</title>
-  </head>
-  <body>
-  <table border="1">
+</head>
+<body>
+<table border="1">
 
-  <p> main page</p>
+    <p> main page</p>
     <a href="/products">Start</a>
 
-  </table>
-  </body>
+</table>
+</body>
 </html>
