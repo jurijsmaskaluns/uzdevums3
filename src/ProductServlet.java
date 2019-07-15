@@ -1,13 +1,12 @@
 import lv.uzdevums.DAO;
-import lv.uzdevums.Product;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @javax.servlet.annotation.WebServlet(name = "ProductServlet", urlPatterns = "/products")
 public class ProductServlet extends javax.servlet.http.HttpServlet {

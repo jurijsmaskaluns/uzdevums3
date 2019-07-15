@@ -12,8 +12,9 @@ import java.sql.SQLException;
 public class AddProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
+        String productType = request.getParameter("type");
         try {
-            DAO.addProduct(name);
+            DAO.addProduct(name,productType);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

@@ -15,11 +15,20 @@
 
 <table border="1">
 
-        <tr><td>ID</td><td>Product Name</td></tr>
+    <tr>
+        <td>ID</td>
+        <td>Product Name</td>
+        <td>Product Type</td>
+        <td>Day</td>
+        <td>Product Status</td>
+    </tr>
     <c:forEach items="${requestScope.products}" var="product">
         <tr>
             <td>${product.id}</td>
             <td><c:out value="${product.name}"/></td>
+            <td><c:out value="${product.productType}"/></td>
+            <td><c:out value="${product.created}"/></td>
+            <td><c:out value="${product.status}"/></td>
             <td>
                 <a href="delete?id=${product.id}">delete</a>
             </td>
@@ -31,15 +40,23 @@
     <tr>Add Product</tr>
     <form action="/add" method="post">
 
-        <tr>
-            <td colspan="2">
-                <input name="name" type="text">
-            </td>
-            <td>
-                <input type="submit">
-            </td>
 
-        </tr>
+            <tr>
+                <td>Product Name</td>
+                <td colspan="2">
+                    <input name="name" type="text">
+                </td>
+                <td>Product Type</td>
+                <td colspan="2">
+                    <input name="type" type="text">
+                </td>
+                <td>
+                    <input type="submit">
+                </td>
+
+            </tr>
+
+
     </form>
 
 </table>

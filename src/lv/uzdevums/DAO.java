@@ -16,42 +16,31 @@ public class DAO {
     public static List<Product> getProducts() throws SQLException, ClassNotFoundException {
 
         try (Connection c = getConnection();
-             PreparedStatement ps = c.prepareStatement("SELECT id,name from product");
+             PreparedStatement ps = c.prepareStatement("SELECT * from product");
              ResultSet resultSet = ps.executeQuery();) {
 
             ArrayList<Product> products = new ArrayList<>();
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
-                products.add(new Product(id, name));
+                Date created = resultSet.getDate(3);
+                String productType = resultSet.getString(4);
+                int status = resultSet.getInt(5);
+                products.add(new Product(id, name, created, productType, status));
             }
             return products;
         }
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        System.out.println(getProducts());
-    }
 
-//    public static void deleteProduct(int id) {
-//        Product d = null;
-//        for (Product p : products) {
-//            if (p.id == id) {
-//                d = p;
-//            }
-//        }
-//        if (d != null) {
-//            products.remove(d);
-//        }
-//    }
-
-    public static void addProduct(String name) throws SQLException, ClassNotFoundException {
-//        products.add(new Product(products.size(), name));
+    public static void addProduct(String name, String productType) throws SQLException, ClassNotFoundException {
         try (Connection c = getConnection();
-             PreparedStatement ps = c.prepareStatement("INSERT INTO product (name) VALUES (?)");) {
-            ps.setString(1, name);
+                PreparedStatement ps = c.prepareStatement("INSERT INTO product(name, productType) values(?,?)");
+                )
+        {
+            ps.setString(1,name);
+            ps.setString(2,productType);
             ps.executeUpdate();
-
         }
     }
 
